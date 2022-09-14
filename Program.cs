@@ -41,27 +41,41 @@
 // [0,1,3,10,10,19] - > да
 // [0,1,3,10,20,19] - > нет
 
-int[] array = {0,1,30,10,10,19};
-System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
-if (!CheckSort(array) ) // ! -не
-    System.Console.WriteLine("No");
-else
-    System.Console.WriteLine("Yes");
+// int[] array = {0,1,30,10,10,19};
+// System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
+// if (!CheckSort(array) ) // ! -не
+//     System.Console.WriteLine("No");
+// else
+//     System.Console.WriteLine("Yes");
 
-bool CheckSort (int [] array)
-{
-    for (int i = 0; i < array.Length - 1; i++)
-    {
-        if (array[i] > array[i+1])
-        return false;
-    }
-    return true;
-}
+// bool CheckSort (int [] array)
+// {
+//     for (int i = 0; i < array.Length - 1; i++)
+//     {
+//         if (array[i] > array[i+1])
+//         return false;
+//     }
+//     return true;
+// }
 
 
 // Задача 3
 // Является ли массив арифметической прогрессией
 // 1 {1,3,5,7,9} - да
 
-
-
+int[] array = {1,3,5,8,9};
+System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
+if (CheckProgress(array) ) 
+    System.Console.WriteLine("Yes");
+else
+    System.Console.WriteLine("No");
+bool CheckProgress(int[] array)
+{
+    int x = array[1]-array[0];
+    for (int i = 1; i < array.Length-1; i++)
+    {
+        if (array[i+1]-array[i] != x)
+        return false;
+    }
+    return true;
+}
