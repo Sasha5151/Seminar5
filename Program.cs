@@ -63,19 +63,39 @@
 // Является ли массив арифметической прогрессией
 // 1 {1,3,5,7,9} - да
 
-int[] array = {1,3,5,8,9};
+// int[] array = {1,3,5,8,9};
+// System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
+// if (CheckProgress(array) ) 
+//     System.Console.WriteLine("Yes");
+// else
+//     System.Console.WriteLine("No");
+// bool CheckProgress(int[] array)
+// {
+//     int x = array[1]-array[0];
+//     for (int i = 1; i < array.Length-1; i++)
+//     {
+//         if (array[i+1]-array[i] != x)
+//         return false;
+//     }
+//     return true;
+// }
+
+//End
+
+
+//Задача 4
+//Отсортировать массив
+
+int size = 10;
+int[]array = FillArray (size);
 System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
-if (CheckProgress(array) ) 
-    System.Console.WriteLine("Yes");
-else
-    System.Console.WriteLine("No");
-bool CheckProgress(int[] array)
+
+int[] FillArray (int size)
 {
-    int x = array[1]-array[0];
-    for (int i = 1; i < array.Length-1; i++)
+    int[] array = new int[size];
+    for (int i = 0; i < array.Length; i++)
     {
-        if (array[i+1]-array[i] != x)
-        return false;
+    array[i] = new Random().Next(0 , 100);
     }
-    return true;
+    return array;
 }
