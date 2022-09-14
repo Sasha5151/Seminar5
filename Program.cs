@@ -89,7 +89,8 @@
 int size = 10;
 int[]array = FillArray (size);
 System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
-
+Sort(array);
+System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
 int[] FillArray (int size)
 {
     int[] array = new int[size];
@@ -99,3 +100,26 @@ int[] FillArray (int size)
     }
     return array;
 }
+// {34, 2 , 5, 23, 7}
+void Sort(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+       for (int j = 0; j < array.Length ; j++)
+       {
+            int buffer;
+            if (array[i] < array[j])
+                {
+                    buffer = array[j];
+                    array[j]=array[i];
+                    array[i]=buffer;
+                }
+       } 
+    }
+}
+
+
+
+
+
+
