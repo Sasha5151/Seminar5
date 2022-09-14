@@ -41,16 +41,21 @@
 // [0,1,3,10,10,19] - > да
 // [0,1,3,10,20,19] - > нет
 
-int size = 8;
-int[]array = new int[size];
-FillArray (array);
- System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
-void FillArray (int[] array)
+int[] array = {0,1,30,10,10,19};
+System.Console.WriteLine("[{0}]" , string.Join(" , ", array));
+if (!CheckSort(array) ) // ! -не
+    System.Console.WriteLine("No");
+else
+    System.Console.WriteLine("Yes");
+
+bool CheckSort (int [] array)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length - 1; i++)
     {
-    array[i] = new Random().Next(0 , 100);
+        if (array[i] > array[i+1])
+        return false;
     }
+    return true;
 }
 
 
