@@ -100,7 +100,6 @@ int[] FillArray (int size)
     }
     return array;
 }
-// {34, 2 , 5, 23, 7}
 void Sort(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
